@@ -1,0 +1,25 @@
+sync:
+  mode: bidirectional
+  delete_orphaned: false
+  check_timestamps: true
+  buffer_size: 65536
+
+backup:
+  type: incremental
+  retain_versions: 5
+  compression: false
+
+filters:
+  exclude:
+    - "*.tmp"
+    - "*.log"
+    - ".git"
+    - "__pycache__"
+    - "node_modules"
+  include:
+    - "*"
+
+logging:
+  level: INFO
+  file: sync.log
+  format: "%(asctime)s - %(levelname)s - %(message)s"
