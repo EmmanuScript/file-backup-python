@@ -88,6 +88,18 @@ When restoring from incremental backups:
 
 All synced files maintain their original permissions where possible.
 
+## Authentication
+
+The tool supports API key authentication for remote backup operations:
+
+- API keys must be stored in `.backup_auth` file in the user's home directory
+- Format: `API_KEY=your_key_here`
+- Keys are loaded automatically when performing remote operations
+- For local backups, authentication is not required
+- Remote backup endpoints must validate the API key in the request header
+
+Authentication is only required when using remote backup destinations (e.g., cloud storage, network shares that require authentication). Local file system operations do not require authentication.
+
 ## Logging Levels
 
 Set via `LOG_LEVEL` environment variable:

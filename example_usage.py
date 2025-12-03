@@ -1,5 +1,4 @@
 # Example usage script for FileSync
-
 import sys
 from pathlib import Path
 
